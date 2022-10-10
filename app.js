@@ -15,7 +15,7 @@ function calculateResults() {
   const totalInterest = document.getElementById("total-interest");
 
   const principal = parseFloat(amount.value);
-  const calculatedInterest = parseFloat(interest.value) / 100 / 12;
+  const calculatedInterest = parseFloat(interest.value)/100/12;
   const calculatedPayments = parseFloat(years.value) * 12;
 
   const x = Math.pow(1 + calculatedInterest, calculatedPayments);
@@ -27,6 +27,7 @@ function calculateResults() {
     totalInterest.value = (monthly * calculatedPayments - principal).toFixed(2);
     document.getElementById("results").style.display = "block";
     document.getElementById("loading").style.display = "none";
+    
   } else {
     showError("Please Check Your Numbers");
   }
